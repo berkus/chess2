@@ -32,13 +32,13 @@ class Piece : Hashable
     var position: String // Rank-and-file format
     let image: UIImage
     
-    init(kind: PieceKind, color: PieceColor)
+    init(_ color: PieceColor, _ kind: PieceKind)
     {
-        self.kind = kind
         self.color = color
+        self.kind = kind
         self.position = "A1"
         self.image = UIImage(named: "white_queen.svg")
-        //self.image = UIImage(named: imageName())
+//        self.image = UIImage(named: picture)
     }
     
     var description: String {
@@ -59,7 +59,7 @@ class Piece : Hashable
         return result
     }
     
-    var imageName: String {
+    var picture: String {
         var result = ""
         switch(color) {
             case .White: result = "white_"

@@ -31,6 +31,7 @@
 		A57F7E2519EDF5800002F46B /* white_pawn.svg in Resources */ = {isa = PBXBuildFile; fileRef = A57F7E1419EDF5800002F46B /* white_pawn.svg */; };
 		A57F7E2619EDF5800002F46B /* white_queen.svg in Resources */ = {isa = PBXBuildFile; fileRef = A57F7E1519EDF5800002F46B /* white_queen.svg */; };
 		A57F7E2719EDF5800002F46B /* white_rook.svg in Resources */ = {isa = PBXBuildFile; fileRef = A57F7E1619EDF5800002F46B /* white_rook.svg */; };
+		A57F7E2919EE022C0002F46B /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57F7E2819EE022C0002F46B /* Board.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		A57F7E1419EDF5800002F46B /* white_pawn.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = white_pawn.svg; sourceTree = "<group>"; };
 		A57F7E1519EDF5800002F46B /* white_queen.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = white_queen.svg; sourceTree = "<group>"; };
 		A57F7E1619EDF5800002F46B /* white_rook.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = white_rook.svg; sourceTree = "<group>"; };
+		A57F7E2819EE022C0002F46B /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				A57F7DDF19EDF3940002F46B /* AppDelegate.swift */,
+				A57F7E2819EE022C0002F46B /* Board.swift */,
 				A57F7E0119EDF5600002F46B /* BoardView.swift */,
 				A57F7DE119EDF3940002F46B /* BoardViewController.swift */,
 				A57F7E0219EDF5600002F46B /* Piece.swift */,
@@ -292,6 +295,7 @@
 			files = (
 				A57F7E0319EDF5600002F46B /* BoardView.swift in Sources */,
 				A57F7E0419EDF5600002F46B /* Piece.swift in Sources */,
+				A57F7E2919EE022C0002F46B /* Board.swift in Sources */,
 				A57F7DE219EDF3940002F46B /* BoardViewController.swift in Sources */,
 				A57F7DE019EDF3940002F46B /* AppDelegate.swift in Sources */,
 			);
@@ -487,6 +491,7 @@
 				A57F7DFD19EDF3950002F46B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A57F7DFE19EDF3950002F46B /* Build configuration list for PBXNativeTarget "chess2Tests" */ = {
 			isa = XCConfigurationList;
@@ -495,6 +500,7 @@
 				A57F7E0019EDF3950002F46B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
