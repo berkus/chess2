@@ -2,6 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="LKg-7A-DBl">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -28,16 +30,67 @@
                         <viewControllerLayoutGuide type="top" id="dkS-xt-EO9"/>
                         <viewControllerLayoutGuide type="bottom" id="Ceg-mh-M2Q"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="BM4-5R-kwo" customClass="BoardView" customModule="chess2" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="BM4-5R-kwo">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gu8-ov-Jgt" customClass="BoardView" customModule="chess2" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="gu8-ov-Jgt" secondAttribute="height" multiplier="1:1" id="lr8-xo-1zQ"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="lr8-xo-1zQ"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="107" width="360" height="360"/>
+                                    <mask key="constraints">
+                                        <include reference="lr8-xo-1zQ"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="gu8-ov-Jgt" secondAttribute="trailing" constant="4" id="P9T-ry-QGu">
+                                <variation key="widthClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint firstItem="gu8-ov-Jgt" firstAttribute="top" secondItem="dkS-xt-EO9" secondAttribute="bottom" constant="43" id="Rjh-5L-azT">
+                                <variation key="widthClass=compact" constant="50"/>
+                            </constraint>
+                            <constraint firstItem="gu8-ov-Jgt" firstAttribute="leading" secondItem="BM4-5R-kwo" secondAttribute="leadingMargin" constant="4" id="gZ7-XC-Fhf">
+                                <variation key="widthClass=compact" constant="20"/>
+                            </constraint>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="gu8-ov-Jgt"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="P9T-ry-QGu"/>
+                                <exclude reference="Rjh-5L-azT"/>
+                                <exclude reference="gZ7-XC-Fhf"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="gu8-ov-Jgt"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="P9T-ry-QGu"/>
+                                <include reference="Rjh-5L-azT"/>
+                                <include reference="gZ7-XC-Fhf"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="kjU-eV-mZh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Pj-bb-Mkw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1066" y="-204"/>
+            <point key="canvasLocation" x="1065" y="-204"/>
         </scene>
     </scenes>
 </document>
