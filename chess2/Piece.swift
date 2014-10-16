@@ -57,7 +57,7 @@ class Piece : Hashable
     }
 
     var image: UIImage {
-        var result = "images/"
+        var result = ""
         switch(color) {
             case .White:  result += "white_"
             case .Black:  result += "black_"
@@ -70,7 +70,7 @@ class Piece : Hashable
             case .Queen:  result += "queen"
             case .King:   result += "king"
         }
-        result += ".svg"
+        result += ".png"
         return UIImage(named: result)
     }
 
