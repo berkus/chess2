@@ -17,12 +17,14 @@ enum PieceKind
     case Rook
     case Queen
     case King
+    case Empty
 }
 
 enum PieceColor
 {
     case White
     case Black
+    case None
 }
 
 class Piece : Hashable
@@ -35,22 +37,24 @@ class Piece : Hashable
     {
         self.color = color
         self.kind = kind
-        self.position = "A1"
+        position = "A1"
     }
 
     var description: String {
         var result = ""
         switch(color) {
-            case .White: result = "White"
-            case .Black: result = "Black"
+            case .White:  result = "White"
+            case .Black:  result = "Black"
+            case .None:   result = ""
         }
         switch(kind) {
-            case .Pawn: result += " pawn"
+            case .Pawn:   result += " pawn"
             case .Knight: result += " knight"
             case .Bishop: result += " bishop"
-            case .Rook: result += " rook"
-            case .Queen: result += " queen"
-            case .King: result += " king"
+            case .Rook:   result += " rook"
+            case .Queen:  result += " queen"
+            case .King:   result += " king"
+            case .Empty:  result = ""
         }
         result += " on " + position
         return result
@@ -61,6 +65,7 @@ class Piece : Hashable
         switch(color) {
             case .White:  result += "white_"
             case .Black:  result += "black_"
+            case .None:   result += ""
         }
         switch(kind) {
             case .Pawn:   result += "pawn"
@@ -69,6 +74,7 @@ class Piece : Hashable
             case .Rook:   result += "rook"
             case .Queen:  result += "queen"
             case .King:   result += "king"
+            case .Empty:  result += "empty"
         }
         result += ".png"
         return UIImage(named: result)
