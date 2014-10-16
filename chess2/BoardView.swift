@@ -28,14 +28,8 @@ class BoardView : UIView
         } else {
             boardImage = UIImage(named: "board_iphone.png")
         }
-        self.board = Board()
+        board = Board()
         super.init(coder: aDecoder)
-    }
-    
-    func drawPiece(piece: Piece, atPoint point: CGPoint, withSize size: CGSize)
-    {
-        let rect = CGRect(origin: point, size: size)
-        piece.image.drawInRect(rect);
     }
     
     override func drawRect(rect: CGRect) {
@@ -93,7 +87,7 @@ class BoardView : UIView
                 let p = CGPointMake(startX + LEFT_OFFSET + width * file, startY + TOP_OFFSET + height * rank);
                 let s = CGSizeMake(width, height);
                 
-                drawPiece(board.pieceAtRank(Int(rank), andFile:Int(file)), atPoint:p, withSize:s);
+                board.pieceAtRank(Int(rank), andFile:Int(file)).image.drawInRect(CGRect(origin: p, size: s))
             }
         }
     
