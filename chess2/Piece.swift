@@ -77,7 +77,7 @@ class Piece : Hashable
             case .Empty:  result += "empty"
         }
         result += ".png"
-        return UIImage(named: result)
+        return UIImage(named: result)!
     }
 
     var hashValue: Int {

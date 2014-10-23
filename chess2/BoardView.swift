@@ -21,12 +21,12 @@ class BoardView : UIView
     required init(coder aDecoder: NSCoder)
     {
         if UIDevice.currentDevice().userInterfaceIdiom == .Pad {
-            boardImage = UIImage(named: "board_ipad.png")
+            boardImage = UIImage(named: "board_ipad.png")!
             TOP_OFFSET = 50.0
             LEFT_OFFSET = 50.0
             FONT_SIZE = 21.0
         } else {
-            boardImage = UIImage(named: "board_iphone.png")
+            boardImage = UIImage(named: "board_iphone.png")!
         }
         board = Board()
         super.init(coder: aDecoder)
@@ -58,9 +58,9 @@ class BoardView : UIView
         //NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:[NSFont systemFontOfSize:[NSFont systemFontSizeForControlSize:NSRegularControlSize]], NSFontAttributeName, DIMENSION_LINE_LABEL_TEXT_COLOR, NSForegroundColorAttributeName, DIMENSION_LINE_LABEL_BACKGROUND_COLOR, NSBackgroundColorAttributeName, nil];
         
         
-        for var rank: CGFloat = 0.0; rank < 8.0; rank += 1.0
+        for rank in 0..<8
         {
-            let ranks = "\(Int(rank+1))"
+            let ranks = "\(rank+1)"
             let dim = ranks.sizeWithAttributes([:])
             let locl = CGPointMake(startX + (LEFT_OFFSET - dim.width) / 2.0, startY + TOP_OFFSET + dim.height / 2.0 + height * rank)
             let locr = CGPointMake(endX   + (LEFT_OFFSET - dim.width)/2.0, startY + TOP_OFFSET + dim.height/2.0 + height * rank)
